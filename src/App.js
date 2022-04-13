@@ -1,30 +1,26 @@
-import React, {useEffect, useState} from "react";
 import MyButton from "./components/UI/button/MyButton";
 import "./styles/App.css"
-
+import { useSelector, useDispatch } from 'react-redux';
 
 
 function App() {
-  
-  const [value, setValue] = useState();
-  const chuck = 'https://api.chucknorris.io/jokes/random';
 
-  useEffect(()=>{
-    getChuck()
-  },[])
+  const dispatch = useDispatch();
 
+  const showChuck = useSelector( state => state.chackReduce.chuck)
 
-
-  
+  const chuckLink = 'https://api.chucknorris.io/jokes/random';
 
   function getChuck(){
-    fetch(chuck).then(result => result.json()).then(commits => setValue(commits.value))
+    fetch(chuckLink).
+    then(result => result.json()).
+    then(commits => dispatch({type: "UPDATE_CHUCK", payload: commits.value}))
   }
+
   return (
     <div className="App">
-      {value}
-    <MyButton onClick={getChuck}>Кнопка</MyButton>
-
+      {showChuck}
+      <MyButton onClick={getChuck}>Кнопка</MyButton>
     </div>
   );
 }
