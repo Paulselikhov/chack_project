@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/chack_project/static/css/main.8f1678ed.css",
+    "main.js": "/chack_project/static/js/main.0852a7d2.js",
+    "index.html": "/chack_project/index.html",
+    "main.8f1678ed.css.map": "/chack_project/static/css/main.8f1678ed.css.map",
+    "main.0852a7d2.js.map": "/chack_project/static/js/main.0852a7d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8f1678ed.css",
+    "static/js/main.0852a7d2.js"
+  ]
+}
